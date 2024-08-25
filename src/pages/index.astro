@@ -1,33 +1,24 @@
 ---
 import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
+
+const meta = {
+	description: "About our initiative and its inspiration",
+	title: 'About'
+}
 ---
 
-<PageLayout meta={{ title: 'Join the Waitlist' }}>
-	<Section>
-		<div class='flex w-full flex-col items-center gap-y-10 text-center text-white max-w-3xl mx-auto text-primary'>
-			<h1 class='text-5xl font-bold'>Join Waitlist</h1>
-			
-			<div class='w-full max-w-md border border-gray-600 rounded-3xl p-8'>
-				<form class='flex flex-col gap-y-6'>
-					<input
-						type='email'
-						placeholder='Enter your email address'
-						class='w-full rounded-xl border border-gray-600 px-4 py-3 text-gray-200 placeholder-gray-400 focus:border-gray-500 focus:outline-none'
-						required
-					/>
-					<button
-						type='submit'
-						class='rounded-xl border bg-white px-4 py-3 font-semibold text-gray-900 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
-					>
-						Submit
-					</button>
-				</form>
-				<p class='mt-6 text-sm text-gray-400'>
-					By signing up, you agree to our Terms of Service and Privacy Policy.
-				</p>
-			</div>
-		</div>
-	</Section>
-</PageLayout>
+<PageLayout meta={meta}>
+	<div class="max-w-3xl mx-auto text-primary">
+		<h1 class="text-4xl font-bold mb-8 text-center">Stay Tuned</h1>
+		
+		<section class="mb-12">
+			<p class="mb-4">
+				Dear friends,
+				Our website is taking a moment to breathe deeply and find its center. 😌
+				Until then, take a deep breath, smile, and embrace this moment of stillness. 🧘‍♂️✨
+			</p>
+		</section>
 
+	</div>
+</PageLayout>
