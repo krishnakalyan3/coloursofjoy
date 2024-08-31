@@ -1,4 +1,6 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const aboutURL = getRelativeLocaleUrl("de", "about");
 
 ---
 
@@ -7,11 +9,11 @@
 		class='relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center'
 		aria-label='global'
 	>
-		<a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>coloursofjoy</a>
+		<a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>COJ</a>
 
 		<div class='flex flex-row items-center justify-center gap-x-5 sm:gap-x-7'>
 			<a
-				href='/about'
+				href={aboutURL}
 				class='flex-none text-[1.05rem] font-medium hover:text-foreground/75'
 				aria-label='Nav Menu Item'
 				>About
@@ -19,3 +21,17 @@
 		</div>
 	</nav>
 </header>
+
+<script>
+	function getCurrentTheme() {
+		return localStorage.getItem('theme')
+	}
+	const toggleDarkModeButton = document.getElementById('toggleDarkMode')
+
+	toggleDarkModeButton?.addEventListener('click', () => {
+		const toggleDarkModeEvent = new CustomEvent('theme-change', {
+			detail: { theme: getCurrentTheme() === 'dark'}
+		})
+		document.dispatchEvent(toggleDarkModeEvent)
+	})
+</script>
